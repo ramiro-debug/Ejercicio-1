@@ -6,9 +6,12 @@
 # Con un presupuesto de $3.000.000 aumentaria la capacidad de cada Carrier
 # A continuacion dejo las querys realizadas para cada Carrier
 
-SELECT SUM((costos.Costo * cantenvios.CantEnvios)/ carrier.Capacity) AS Carrier2Total FROM costos, cantenvios, carrier WHERE costos.CarrierID = 1 AND costos.Zona = cantenvios.Zona AND carrier.CarrierID = costos.CarrierID
+#Query Carrier 1
+SELECT SUM((costos.Costo * cantenvios.CantEnvios)/ carrier.Capacity) AS Carrier1Total FROM costos, cantenvios, carrier WHERE costos.CarrierID = 1 AND costos.Zona = cantenvios.Zona AND carrier.CarrierID = costos.CarrierID
+#Query Carrier 2
 SELECT SUM((costos.Costo * cantenvios.CantEnvios)/ carrier.Capacity) AS Carrier2Total FROM costos, cantenvios, carrier WHERE costos.CarrierID = 2 AND costos.Zona = cantenvios.Zona AND carrier.CarrierID = costos.CarrierID
-SELECT SUM((costos.Costo * cantenvios.CantEnvios)/ carrier.Capacity) AS Carrier2Total FROM costos, cantenvios, carrier WHERE costos.CarrierID = 3 AND costos.Zona = cantenvios.Zona AND carrier.CarrierID = costos.CarrierID
+#Query Carrier 3
+SELECT SUM((costos.Costo * cantenvios.CantEnvios)/ carrier.Capacity) AS Carrier3Total FROM costos, cantenvios, carrier WHERE costos.CarrierID = 3 AND costos.Zona = cantenvios.Zona AND carrier.CarrierID = costos.CarrierID
 
 # Esta misma Query podria automatizarse mediante un Script.
 # Dejo como supuesto el ejercicio de esta manera ya que fue un poco confuso sin unidades.
