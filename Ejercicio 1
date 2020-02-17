@@ -1,0 +1,14 @@
+#Ejercicio - SQL + Propuesta
+#Respuestas de ejercicio numero 1 de 3
+# Para el mes 1 enviar el "carrier A" costaria un total de $440
+# Para el mes 1 enviar el "carrier B" costaria un total de $485
+# Para el mes 1 enviar el "carrier C" costaria un total de $266,67
+# Con un presupuesto de $3.000.000 aumentaria la capacidad de cada Carrier
+# A continuacion dejo las querys realizadas para cada Carrier
+
+SELECT SUM((costos.Costo * cantenvios.CantEnvios)/ carrier.Capacity) AS Carrier2Total FROM costos, cantenvios, carrier WHERE costos.CarrierID = 1 AND costos.Zona = cantenvios.Zona AND carrier.CarrierID = costos.CarrierID
+SELECT SUM((costos.Costo * cantenvios.CantEnvios)/ carrier.Capacity) AS Carrier2Total FROM costos, cantenvios, carrier WHERE costos.CarrierID = 2 AND costos.Zona = cantenvios.Zona AND carrier.CarrierID = costos.CarrierID
+SELECT SUM((costos.Costo * cantenvios.CantEnvios)/ carrier.Capacity) AS Carrier2Total FROM costos, cantenvios, carrier WHERE costos.CarrierID = 3 AND costos.Zona = cantenvios.Zona AND carrier.CarrierID = costos.CarrierID
+
+# Esta misma Query podria automatizarse mediante un Script.
+# Dejo como supuesto el ejercicio de esta manera ya que fue un poco confuso sin unidades.
